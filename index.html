@@ -1,149 +1,556 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Nonsoinspire Foundation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
+<title>Nonsoinspire Foundation</title>
 
-    header {
-      background: #2e7d32;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<style>
 
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
+body{
+font-family:Arial, sans-serif;
+background:#f4f7f4;
+color:#222;
+line-height:1.7;
+}
 
-    nav {
-      background: #1b5e20;
-      text-align: center;
-      padding: 15px;
-    }
+/* HERO SECTION */
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 10px;
-      font-weight: bold;
-    }
+header{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('photo1.jpg');
 
-    section {
-      padding: 30px 20px;
-      background: white;
-      margin: 20px;
-      border-radius: 10px;
-    }
+background-size:cover;
+background-position:center;
 
-    h2 {
-      color: #2e7d32;
-    }
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+color:white;
+}
 
-    .donate-btn {
-      display: inline-block;
-      background: #2e7d32;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
+.hero{
+max-width:900px;
+}
 
-    footer {
-      background: #1b5e20;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
+.hero img{
+width:180px;
+border-radius:25px;
+margin-bottom:20px;
+box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
 
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-  </style>
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:25px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+border-radius:12px;
+font-size:22px;
+margin:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#145a1f;
+transform:scale(1.05);
+}
+
+/* NAVIGATION */
+
+nav{
+background:#145a1f;
+padding:18px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:19px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#90ee90;
+}
+
+/* SECTION STYLE */
+
+section{
+background:white;
+margin:35px;
+padding:60px;
+border-radius:25px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+section h2{
+font-size:45px;
+margin-bottom:25px;
+color:#2e7d32;
+}
+
+section p{
+font-size:21px;
+margin-bottom:20px;
+}
+
+/* IMPACT SECTION */
+
+.impact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.impact-box{
+background:#2e7d32;
+color:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+}
+
+.impact-box h3{
+font-size:45px;
+}
+
+/* PROGRAMS */
+
+.program-list li{
+font-size:22px;
+margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* VIDEO */
+
+video{
+width:100%;
+border-radius:20px;
+margin-top:20px;
+}
+
+/* AUDIO */
+
+audio{
+width:100%;
+margin-top:20px;
+}
+
+/* CONTACT */
+
+.contact-box{
+background:#f0f0f0;
+padding:35px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
+padding:16px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
+}
+
+.contact-box button{
+margin-top:20px;
+padding:15px 35px;
+background:#2e7d32;
+color:white;
+border:none;
+border-radius:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+.contact-box button:hover{
+background:#145a1f;
+}
+
+/* SOCIAL LINKS */
+
+.socials{
+margin-top:25px;
+}
+
+.socials a{
+display:inline-block;
+margin:10px;
+padding:12px 20px;
+background:#145a1f;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#145a1f;
+color:white;
+text-align:center;
+padding:50px 20px;
+margin-top:40px;
+}
+
+footer h3{
+font-size:35px;
+margin-bottom:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
+section{
+margin:15px;
+padding:35px 20px;
+}
+
+section h2{
+font-size:35px;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+<!-- HERO -->
+
 <header>
-  <h1>Nonsoinspire Foundation</h1>
-  <p>Supporting education, health outreach, and empowerment for underserved children across Africa.</p>
+
+<div class="hero">
+
+<img src="logo.png" alt="Nonsoinspire Logo">
+
+<h1>Nonsoinspire Foundation</h1>
+
+<p>
+Supporting education, health education, mentorship,
+school outreach, sanitary pads distribution,
+first aid awareness, empowerment, and hope for underserved children across Africa.
+</p>
+
+<a href="https://gofund.me/f5aab1ae8" class="btn">
+Donate Now
+</a>
+
+<a href="#contact" class="btn">
+Contact Us
+</a>
+
+</div>
+
 </header>
 
+<!-- NAVIGATION -->
+
 <nav>
-  <a href="#about">About</a>
-  <a href="#mission">Mission</a>
-  <a href="#programs">Programs</a>
-  <a href="#donate">Donate</a>
-  <a href="#contact">Contact</a>
+
+<a href="#about">About</a>
+<a href="#mission">Mission</a>
+<a href="#impact">Impact</a>
+<a href="#programs">Programs</a>
+<a href="#gallery">Gallery</a>
+<a href="#video">Videos</a>
+<a href="#audio">Audio</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
+<!-- ABOUT -->
+
 <section id="about">
-  <h2>About Us</h2>
-  <p>
-    Nonsoinspire Foundation is dedicated to helping underserved girls and boys across Africa through education support, mentorship, health education, school supplies, reusable sanitary pads, shoes, and first aid support.
-  </p>
+
+<h2>About Us</h2>
+
+<p>
+Nonsoinspire Foundation is a humanitarian and educational organization dedicated to empowering underserved girls and boys through quality education, mentorship, healthcare awareness, school outreach, and practical support programs.
+</p>
+
+<p>
+Our mission is to help vulnerable children stay in school, gain confidence, improve their health, and build brighter futures.
+</p>
+
 </section>
+
+<!-- MISSION -->
 
 <section id="mission">
-  <h2>Our Mission</h2>
-  <p>
-    Our mission is to help children stay in school, grow with confidence, and build a brighter future regardless of their background.
-  </p>
+
+<h2>Our Mission</h2>
+
+<p>
+To educate, inspire, empower, and uplift underserved communities through education support, health education, outreach campaigns, mentorship, and humanitarian programs.
+</p>
+
 </section>
+
+<!-- IMPACT -->
+
+<section id="impact">
+
+<h2>Our Impact</h2>
+
+<div class="impact-grid">
+
+<div class="impact-box">
+<h3>5000+</h3>
+<p>Students Reached</p>
+</div>
+
+<div class="impact-box">
+<h3>120+</h3>
+<p>School Outreach Programs</p>
+</div>
+
+<div class="impact-box">
+<h3>3000+</h3>
+<p>Sanitary Pads Distributed</p>
+</div>
+
+<div class="impact-box">
+<h3>1000+</h3>
+<p>Shoes & Supplies Donated</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROGRAMS -->
 
 <section id="programs">
-  <h2>Our Programs</h2>
 
-  <ul>
-    <li>School supplies distribution</li>
-    <li>Reusable sanitary pads support</li>
-    <li>Health education outreach</li>
-    <li>Mentorship programs</li>
-    <li>Shoes and first aid support</li>
-  </ul>
+<h2>Our Programs</h2>
+
+<ul class="program-list">
+
+<li>Health Education Campaigns</li>
+
+<li>School Supplies Distribution</li>
+
+<li>Reusable Sanitary Pads Support</li>
+
+<li>Mentorship & Leadership Training</li>
+
+<li>First Aid Awareness Programs</li>
+
+<li>School Shoes & Uniform Support</li>
+
+<li>Educational Outreach Visits</li>
+
+</ul>
+
 </section>
 
-<section id="donate">
-  <h2>Support Our Cause</h2>
+<!-- GALLERY -->
 
-  <p>
-    Your support helps children stay in school and access better opportunities.
-  </p>
+<section id="gallery">
 
-  <a class="donate-btn" href="https://gofund.me/f5aab1ae8">
-    Donate Now
-  </a>
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+
+</div>
+
 </section>
+
+<!-- VIDEO -->
+
+<section id="video">
+
+<h2>Outreach Videos</h2>
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</section>
+
+<!-- AUDIO -->
+
+<section id="audio">
+
+<h2>Founder Audio Message</h2>
+
+<p>
+Listen to a special message from the founder of Nonsoinspire Foundation.
+</p>
+
+<audio controls>
+<source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+</section>
+
+<!-- CONTACT -->
 
 <section id="contact">
-  <h2>Contact Us</h2>
 
-  <p>Email: nonsoinspire@gmail.com</p>
-  <p>Phone: +2348032949447</p>
-  <p>Location: Lagos, Nigeria</p>
+<h2>Contact Us Directly</h2>
+
+<p>
+Send us a direct message through the form below.
+</p>
+
+<div class="contact-box">
+
+<form action="https://formsubmit.co/nonsoinspirefoundation@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Full Name" required>
+
+<input type="email" name="email" placeholder="Your Email Address" required>
+
+<textarea name="message" rows="7" placeholder="Write your message..." required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+<br><br>
+
+<h3>Foundation Information</h3>
+
+<p><b>Founder:</b> Francis</p>
+
+<p><b>Email:</b> nonsoinspirefoundation@gmail.com</p>
+
+<p><b>Phone:</b> +2348032949447</p>
+
+<p><b>Location:</b> Lagos, Nigeria</p>
+
+<p><b>LinkedIn:</b></p>
+
+<p>
+<a href="https://www.linkedin.com/in/nonsoinspire-francis-3187143b4">
+Visit LinkedIn Profile
+</a>
+</p>
+
+<a href="https://gofund.me/f5aab1ae8" class="btn">
+Support Our Mission
+</a>
+
 </section>
 
+<!-- SOCIAL MEDIA -->
+
+<section>
+
+<h2>Follow Us</h2>
+
+<div class="socials">
+
+<a href="https://facebook.com/">Facebook</a>
+
+<a href="https://instagram.com/">Instagram</a>
+
+<a href="https://tiktok.com/">TikTok</a>
+
+<a href="https://youtube.com/">YouTube</a>
+
+<a href="https://twitter.com/">Twitter/X</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-  <p>©️ 2026 Nonsoinspire Foundation. All rights reserved.</p>
+
+<h3>Nonsoinspire Foundation</h3>
+
+<p>
+Educate • Empower • Inspire
+</p>
+
+<p style="margin-top:20px;">
+©️ 2026 Nonsoinspire Foundation. All Rights Reserved.
+</p>
+
 </footer>
 
 </body>
